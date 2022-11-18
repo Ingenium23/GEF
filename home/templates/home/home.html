@@ -1,0 +1,142 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block class1 %}
+
+class="active"
+
+{% endblock class1 %}
+
+{% block content %}
+
+ <!-- ======= Hero Section ======= -->
+
+
+    <section id="hero" class="pt-6">
+      <div id="heroCarousel" data-bs-interval="4000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+       
+      <div class="carousel-inner" role="listbox">
+          {% for post in slideshow %}
+          <!-- Slide 1 -->
+            <div class="carousel-item {% if post.id == 1 %} active {% endif %}" style="background-image: url({{ post.image.url }});">
+            <div class="carousel-container">
+              <div class="carousel-content animate__animated animate__fadeInUp">
+                <h2>{{ post.title }}</h2>
+                <p><strong>{{ post.nutshell }}</strong></p>
+                <!--<div class="text-center"><a href="" class="btn-get-started">Read More</a></div>-->
+              </div>
+            </div>
+          </div>
+          {% endfor %}    
+      </div>
+          <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+          </a>
+          <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+          </a>
+          <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+      </div>
+    </section><!-- End Hero -->
+
+
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up"><!--data-aos="fade-up"-->
+
+        <div class="row content pb-5">
+          <div><!--data-aos="fade-right"-->
+            <h2 class="text-center">OUR STRATEGY</h2>
+           <!-- <h3 class="text-center">Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+            --> 
+            
+            <div class="d-flex justify-content-center">
+            <ul>
+              <h5><li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Restoration of the ecosystem</li></h5>
+              <h5><li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Improving living condition and health</li></h5>
+              <h5><li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Strengthening of culture and social fabric</li></h5>
+              <h5><li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Improve Household income</li></h5>
+              <h5><li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Improve primary and secondary education</li></h5>
+            </ul>
+            </div>
+          </div>
+         </div>
+        
+        
+        <div class="row content">
+          <div data-aos="fade-left"><!--  data-aos="fade-left"-->
+           
+            <p class="text-justify para"> <!--fst-italic-->
+              Aims to help the community living in the poorest areas of the world where restoration of the severely degraded landscapes play a central role and improve their living standard so that their physical, emotional and social needs are satisfied.
+              Greening Earth foundation is the ambassador for the poorest people in the world and we insure their integral human development by being a network for organizations, companies, governments and individuals that gives their opportunities to support poorest people in an effective ways.
+              Communities living in the poorest areas, they deserve to live in a good environment, sheltered, healthier with happiness and joy together with food security.
+              Let’s do our part they will do their part to cherish happiness to their lives.
+            </p>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+    
+    
+    
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="row wrapper">
+          <div class="icon-box iconbox-blue" data-aos="zoom-in" data-aos-delay="100"><!--data-aos="zoom-in" data-aos-delay="100"-->
+            <div class="p-6">
+              <h4><a href="">Our Vision</a></h4>
+              <div class="d-flex justify-content-center">
+              <p>“To Improve the wellbeing for all”</p>
+              </div>
+            </div>
+          </div>
+
+           <div class="icon-box iconbox-blue" data-aos="zoom-in" data-aos-delay="100"> <!--data-aos="zoom-in" data-aos-delay="100"-->
+            <div class="p-6">
+              <h4><a href="">Our Mission</a></h4>
+              <div class="d-flex justify-content-center">
+            <p>Strongly improve the quality of life and future perspective of the target group through restoration of degraded landscape and livelihoods</p>
+              </div>
+              </div>
+          </div>
+
+           <div class="icon-box iconbox-blue" data-aos="zoom-in" data-aos-delay="100"><!--data-aos="zoom-in" data-aos-delay="100"-->
+            <div class="p-6">
+              <h4><a href="">Our Value</a></h4>
+              <div class="d-flex justify-content-center">
+            <ul class="ValueClass">
+              <li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;We care for the ecosystem</li>
+              <li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;We are curious and open-minded learners</li>
+              <li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;We collaborate</li>
+              <li><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;We have resiliencers</li>
+            </ul>
+              </div>
+              
+          </div>
+          </div>
+    
+          
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+    
+    
+    
+
+  </main><!-- End #main -->
+
+
+
+
+{% endblock content %}
+
+

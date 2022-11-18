@@ -1,0 +1,113 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block class4 %}
+
+class="active"
+
+{% endblock class4 %}
+
+
+{% block content %}
+
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Projects</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Projects</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container"><!--data-aos="fade-up"-->
+
+        <div class="row justify-content-center">
+
+          <div class="entries col-sm-10 mx.auto"> <!--col-lg-10-->
+
+             {% for com in project %}
+            <article class="entry">
+
+              <div class="entry-img">
+                <img src="{{ com.frontImage.url }}" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="{% url 'project-detail' com.id %}">{{ com.title }}</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-geo-alt"></i>{{ com.location }}</li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> {{ com.date|date:"F, Y" }}</li><!-- {{ post.date_posted|date:"F d, Y" }}-->
+                  <!--
+                  {{ com.date|date:"F d, Y" }}
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                -->
+
+                </ul>
+              </div>
+
+              <div class="entry-content">
+
+                <p>{{ com.summary|truncatechars:500 }}
+                 </p>
+
+                <div class="read-more">
+                  <a href="{% url 'project-detail' com.id %}">View Project</a>
+                </div>
+
+              </div>
+
+            </article><!-- End blog entry -->
+
+               {% endfor %}
+
+
+
+
+
+
+
+            <div class="blog-pagination">
+
+          {% if is_paginated%}
+              <ul class="justify-content-center">
+           {% for num in page_obj.paginator.page_range %}
+             {% if page_obj.number == num %}
+                <li class="active"><a href="?page={{ num }}">{{ num }}</a></li>
+
+             {% elif num > page_obj.number|add:'-100' and num < page_obj.number|add:'100' %}
+              <li><a  href="?page={{ num }}">{{ num }}</a> </li>
+
+             {% endif %}
+           {% endfor %}
+                                                               </ul>
+          {% endif %}
+
+            </div>
+
+          </div><!-- End blog entries list -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+
+
+{% endblock content %}

@@ -1,0 +1,66 @@
+
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block class3 %}
+
+class="active"
+
+{% endblock class3 %}
+
+
+
+
+{% block content %}
+  
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Our Impact</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Our Impact</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    
+    
+    
+    
+         <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      
+       <div class="row content" data-aos="zoom-in" data-aos-delay="100">
+          <div> <!--data-aos="fade-right"-->
+            <!--<h3 class="text-center para">The core elements of the Methodology are</h3>-->
+            <div class="d-flex justify-content-center">
+            <ul>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Increase social justice and equality</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Improve Family health and hygiene</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Increase worth, pride and participation in the community</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Increase income per family significantly above poverty level.</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Increase school participation</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Increase awareness on environmental conservation</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Increase worth, pride and participation in the community</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Facilitate increasing yield on field crops and animals</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Reduce aberrant behaviour in the community</li></p>
+              <p><li class="para"><img src="{% static 'images/greening.png' %}" width=20/>&nbsp;Increase vegetation cover and water infiltration</li></p>
+            </ul>
+            </div>
+          </div>
+        </div>
+      
+    </section><!-- End About Us Section -->
+    
+    
+
+  </main><!-- End #main -->
+{% endblock content %}
